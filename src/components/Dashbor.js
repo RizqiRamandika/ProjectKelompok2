@@ -3,7 +3,6 @@ import "../assets/css/Sidebar.css";
 import Navbar from "./Navbar";
 // import Slide from "../pages/Slide";
 
-
 function Nav() {
   return (
     <div className="body main">
@@ -12,12 +11,19 @@ function Nav() {
       {/* Content*/}
       <main className="mt-5 pt-3">
         <div className="container">
-          {/* <Slide /> */}
-          <h3>
-            <center>
-              <strong>Dashboard</strong>
-            </center>
-          </h3>
+          <h3 style={{ fontWeight: "lighter" }}>Dashboard</h3>
+          <ul class="breadcrumb">
+            <li>
+              <a href="/">
+                <i style={{ paddingRight: "3px" }} class="bi bi-house-door"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/Dashbor">Dashboard</a>
+            </li>
+            <li>Kategori</li>
+          </ul>
           <div className="row">
             <div className="col-md-3 mb-3">
               <div className="card">

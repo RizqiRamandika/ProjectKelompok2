@@ -194,7 +194,13 @@ class Crud extends Component {
                 <div className="input-group"></div>
               </form>
               <a href="/">
-                <Button class="aaa">LogOut</Button>
+                <Button class="aaa">
+                  <i
+                    style={{ marginRight: "7px" }}
+                    className="bi bi-box-arrow-left"
+                  ></i>
+                  LogOut
+                </Button>
               </a>
             </div>
           </div>
@@ -303,7 +309,6 @@ class Crud extends Component {
             </nav>
           </div>
         </div>
-
       </div>
     );
   }

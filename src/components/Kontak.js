@@ -173,12 +173,19 @@ class Nav extends Component {
             <div className="row">
               <Container className="row">
                 <div className=" mt-3">
-                  <h4>
-                    <center>
-                      <strong>Kontak Kami</strong>
-                      <hr />
-                    </center>
-                  </h4>
+                <h3 style={{ fontWeight: "lighter" }}>KONTAK KAMI</h3>
+          <ul class="breadcrumb">
+            <li>
+              <a href="/">
+                <i style={{ paddingRight: "3px" }} class="bi bi-house-door"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/Dashbor">Dashboard</a>
+            </li>
+            <li>Kontak Kami</li>
+          </ul>
                   <Form>
                     <Form.Group
                       as={Row}

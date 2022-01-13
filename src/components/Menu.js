@@ -1,14 +1,31 @@
-import React from "react";
+import React, {Component} from "react";
 import "../assets/css/Sidebar.css";
-import { Table, Button, Card, Row, Col } from "react-bootstrap";
+import { Table, Button, Card } from "react-bootstrap";
 import Navbar from "./Navbar";
+import axios from "axios";
+import { API_URL } from "../utils/constants"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCheckCircle,
   faListAlt,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Nav() {
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      pesanans: [],
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get(API_URL + "pesanans").then((res) => {
+        const pesanans = res.data
+        this.setState({pesanans})
+      })
+  }
+  render() {
   return (
     <div className="body main">
       <Navbar />
@@ -16,14 +33,22 @@ function Nav() {
       {/* Content*/}
       <main className="mt-5 pt-3">
         <div className="container">
-          <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item active" aria-current="page">
-                <strong>ORDER</strong>
-              </li>
-            </ol>
-          </nav>
-          <div className="container" style={{ marginTop: "4rem" }}>
+          <h3>
+            Order
+          </h3>
+        <ul class="breadcrumb">
+            <li>
+              <a href="/">
+                <i style={{ paddingRight: "3px" }} class="bi bi-house-door"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/Dashbor">Dashboard</a>
+            </li>
+            <li>Daftar orderan</li>
+          </ul>
+          <div className="container">
             <Card>
               <Card.Header
                 style={{
@@ -34,79 +59,43 @@ function Nav() {
               >
                 <Card.Title>
                   <FontAwesomeIcon icon={faListAlt} size="md" />
-                  {"  "}
                   Daftar Order
                 </Card.Title>
               </Card.Header>
               <Card.Body>
-                <Row>
-                  <Col>
-                    <select
-                      class="form-select"
-                      aria-label="Default select example"
-                      style={{
-                        width: "2cm",
-                        padding: "5px 0px 5px 9px",
-                      }}
-                    >
-                      <option selected>0</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="3">4</option>
-                      <option value="3">5</option>
-                      <option value="3">6</option>
-                      <option value="3">7</option>
-                      <option value="3">8</option>
-                      <option value="3">9</option>
-                      <option value="3">10</option>
-                    </select>
-                  </Col>
-                  <Col>
-                    <span style={{ marginLeft: "290px" }}>
-                      Cari Data:{" "}
-                      <input
-                        type="text"
-                        style={{
-                          width: "3cm",
-                          height: "0.9cm",
-                          padding: "0px 10px 0px 10px",
-                        }}
-                      />
-                    </span>
-                  </Col>
-                </Row>
-                <br />
                 <Table striped bordered hover className="text-center">
                   <thead>
                     <tr>
-                      <th>{"  "}</th>
-                      <th>No</th>
-                      <th>Nama Pembeli</th>
-                      <th>Total</th>
-                      <th>Konfirm</th>
-                      <th>Status</th>
+                      <th></th>
+                      <th><b>No</b></th>
+                      <th><b>Nama Pemesan</b></th>
+                      <th><b>Alamat</b></th>
+                      <th><b>Harga</b></th>
+                      <th><b>Konfirmasi</b></th>
+                      <th><b>Status</b></th>
                     </tr>
                   </thead>
                   <tbody>
+                    {this.state.pesanans.map((pesanans, index) => (
                     <tr>
                       <td>
-                        {" "}
                         <FontAwesomeIcon
                           icon={faCheckCircle}
                           style={{ margin: "7px 7px" }}
                         />
                       </td>
-                      <td>1</td>
-                      <td>Layla</td>
-                      <td>200.000</td>
+                      <td><b>{index + 1}</b></td>
+                      <td><b>{pesanans.user}</b></td>
+                      <td><b>{pesanans.alamat}</b></td>
+                      <td><b>{pesanans.keterangan}</b></td>
                       <td>
-                        <Button variant="success">KONFIRM</Button>
+                        <Button variant="success" style={{padding:"8px", width:"120px"}}>KONFIRM</Button>
                       </td>
                       <td>
-                        <Button variant="success">BAYAR</Button>
+                        <Button variant="success" style={{padding:"8px", width:"120px"}}>BAYAR</Button>
                       </td>
                     </tr>
+                    ))}
                   </tbody>
                 </Table>
               </Card.Body>
@@ -117,5 +106,5 @@ function Nav() {
     </div>
   );
 }
-
-export default Nav;
+}
+export default App;

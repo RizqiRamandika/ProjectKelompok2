@@ -160,11 +160,22 @@ class Nav extends Component {
         {/* Content*/}
         <main className="mt-5 pt-3">
           <div className="container">
-            <h3>
-              <center>
-                <strong>Produk</strong>
-              </center>
-            </h3>
+            <h3 style={{ fontWeight: "lighter" }}>PRODUK</h3>
+            <ul class="breadcrumb">
+              <li>
+                <a href="/">
+                  <i
+                    style={{ paddingRight: "3px" }}
+                    class="bi bi-house-door"
+                  ></i>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="/Dashbor">Dashboard</a>
+              </li>
+              <li>Produk</li>
+            </ul>
             <Row className="overflow-auto menu">
               {this.state.dataUser.map((dataUser) => {
                 return (

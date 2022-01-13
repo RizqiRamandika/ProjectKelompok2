@@ -70,10 +70,23 @@ export default class Home extends Component {
           <div className="container">
             <Row>
               <Col className="mt-3">
-                <h4 className="text-center">
-                  <strong>Piero</strong>
-                </h4>
-                <hr />
+              <h3 style={{ fontWeight: "lighter" }}>PIERO</h3>
+                <ul class="breadcrumb">
+                  <li>
+                    <a href="/">
+                      <i
+                        style={{ paddingRight: "3px" }}
+                        class="bi bi-house-door"
+                      ></i>
+                      Home
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/Dashbor">Dashboard</a>
+                  </li>
+                  <li><a href="/Dashbor">Kategori</a></li>
+                  <li>Piero</li>
+                </ul>
                 <Row className="overflow-auto menu">
                   {menuss &&
                     menuss.map((menu) => <Menuss key={menu.id} menu={menu} />)}

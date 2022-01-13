@@ -6,7 +6,7 @@ import Dashbor from "./components/Dashbor";
 import Setting from "./components/Setting";
 import Kontak from "./components/Kontak";
 import Menu from "./components/Menu";
-import TambahProduc from "./components/TambahProduc";
+import aab from "./components/aab";
 import Kategori from "./components/Kategori";
 import Adidas from "./components/Adidas";
 import Vans from "./components/Vans";
@@ -35,7 +35,7 @@ export default class App extends Component {
             <Route path="/Kontak" component={Kontak} exact />
             <Route path="/Menu" component={Menu} exact />
             <Route path="/Kategori" component={Kategori} exact />
-            <Route path="/TambahProduc" component={TambahProduc} exact />
+            <Route path="/TambahProduc" component={aab} exact />
             <Route path="/Adidas" component={Adidas} exact />
             <Route path="/Vans" component={Vans} exact />
             <Route path="/Puma" component={Puma} exact />

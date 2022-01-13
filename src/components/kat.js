@@ -15,8 +15,7 @@ class table extends Component {
               "assets/images/" +
               kat.category.nama.toLowerCase() +
               "/" +
-              kat.gambar
-            }
+              kat.gambar}
           />
           <Card.Body className="text-center">
             <Card.Title>{kat.nama}</Card.Title>

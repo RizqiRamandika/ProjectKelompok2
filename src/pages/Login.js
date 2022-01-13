@@ -71,7 +71,7 @@ export default class App extends Component {
                     />
                   </div>
                   <div class="row">
-                    <input type="submit" value="Login" class="btnnn" />
+                    <input type="submit" style={{ marginLeft: "130px" }} value="Login" class="btnnn" />
                   </div>
                 </form>
               </div>
@@ -82,26 +82,3 @@ export default class App extends Component {
     );
   }
 }
-//   render() {
-//     return (
-//       <Container class="ad">
-//         <div id="rt">
-//           <div className="A mt-5" style={{backgroundColor:"rgb(216, 216, 216))", borderRadius:"20px", width:"500px"}}>
-//               <h3><strong>Login</strong></h3>
-//             <form className="form" onSubmit={this.handleSubmit}>
-//               <div className="input-group" style={{marginLeft:"51px"}}>
-//                 <label htmlFor="text"><strong>Username</strong></label>
-//                 <input type="text" name="email" />
-//               </div>
-//               <div className="input-group" style={{marginLeft:"51px"}}>
-//                 <label htmlFor="password"><strong>Password</strong></label>
-//                 <input type="password" name="password" />
-//               </div>
-//               <button className="button primary">Login</button>
-//             </form>
-//           </div>
-//         </div>
-//       </Container>
-//     );
-//   }
-// }

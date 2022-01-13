@@ -170,12 +170,22 @@ class Crud extends Component {
             <div className="row">
               <Container className="row">
                 <div className=" mt-3">
-                  <h4>
-                    <center>
-                      <strong>Setting App</strong>
-                      <hr />
-                    </center>
-                  </h4>
+                  <h3 style={{ fontWeight: "lighter" }}>SETTING</h3>
+                  <ul class="breadcrumb">
+                    <li>
+                      <a href="/">
+                        <i
+                          style={{ paddingRight: "3px" }}
+                          class="bi bi-house-door"
+                        ></i>
+                        Home
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/Dashbor">Dashboard</a>
+                    </li>
+                    <li>Setting</li>
+                  </ul>
                   <Form>
                     <Form.Group
                       as={Row}
